@@ -29,7 +29,7 @@ To run the geometry-based feature extractor with label of 16-bit, neighborhood s
 use of voxelization (voxelization does not help for the geometry-based feature extractor), with
 results written to "results-g.csv", use:
 
-    bitdance_pcqa -i pc_with_normals.ply -n 6 -m 0,0,1,0,0 -h results-c.csv
+    bitdance_pcqa -i pc_with_normals.ply -n 6 -m 0,0,1,0,0 -h results-g.csv
 
 
 ## Author
