@@ -19,6 +19,7 @@
 
 PREFIX=/usr
 
+# put here the prefix where Open3D is installed
 OPEN3D_PREFIX=/usr/local
 
 # Change to your compiler of preference
@@ -34,11 +35,10 @@ CXXFLAGS= -g -std=c++17 -fPIC -fopenmp -Wall  -Wno-deprecated-declarations -Wno-
 	-I/usr/include/libdrm -I. -I./ColorSpace
 LDFLAGS= -g -std=c++17 -fPIC -fopenmp -Wl,--no-as-needed -rdynamic -lOpen3D -lGLEW -lGLU -lGL -lglfw -lpng16 -lz
 
+##
 
-all: bitdance_pcqa create_normals
+all: bitdance_pcqa create_normals optimize_voxel_size
 
-#SRCS=$(wildcard *.cpp)
-#OBJS=$(SRCS:.cpp=.o)
 
 # main metric binary rules
 bitdance_pcqa: bitdance_pcqa.o ColorSpace/ColorSpace.o ColorSpace/Conversion.o ColorSpace/Comparison.o
@@ -47,10 +47,17 @@ bitdance_pcqa: bitdance_pcqa.o ColorSpace/ColorSpace.o ColorSpace/Conversion.o C
 bitdance_pcqa.o: bitdance_pcqa.cpp bitdance_pcqa.h
 	$(CPP) -c $(CXXFLAGS) $< -o $@
 
+
+
+# auxiliary commands for creating normals...
 create_normals: create_normals.cpp
 	$(CPP) $(CXXFLAGS) $(LDFLAGS) -o $@ $^
 
-## add optimize_voxel_size
+# and definition of the voxel size
+optimize_voxel_size: optimize_voxel_size.cpp
+	$(CPP) $(CXXFLAGS) $(LDFLAGS) -o $@ $^
+
+
 
 # color space external code
 ColorSpace/Comparison.o: ColorSpace/Comparison.cpp
@@ -62,6 +69,7 @@ ColorSpace/Conversion.o: ColorSpace/Conversion.cpp
 ColorSpace/ColorSpace.o: ColorSpace/ColorSpace.cpp
 	$(CPP) -c $(CXXFLAGS) $< -o $@
 
+##
 
 install: bitdance_pcqa
 	install -d $(PREFIX)/bin

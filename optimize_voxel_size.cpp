@@ -27,8 +27,6 @@
 
 #include <Open3D.h>
 
-#include "pc_utils.h"
-
 using namespace open3d;
 using namespace std;
 
@@ -48,11 +46,11 @@ int main(int argc, char *argv[])
 
     if (argc < 3)
     {
-        fprintf(stderr, "Usage: %s {voxelization_strategy:1,2,3} knob1 point_cloud1.ply point_cloud2.ply point_cloud3.ply ...\n", argv[0]);
+        fprintf(stderr, "Usage: %s {voxelization_strategy:1,2,3} \"k\" point_cloud1.ply point_cloud2.ply point_cloud3.ply ...\n", argv[0]);
         fprintf(stderr, "Voxelization strategy: \n");
         fprintf(stderr, "1 - Percentage of output points in relation to original\n");
-        fprintf(stderr, "2 - Multiplier for the average NN\n");
-        fprintf(stderr, "3 - Multiplier for the average k-NN\n");
+        fprintf(stderr, "2 - Multiplier \"k\" for the average NN\n");
+        fprintf(stderr, "3 - Multiplier \"k\" for the average k-NN\n");
         return EXIT_SUCCESS;
     }
     pc_number = argc-3;

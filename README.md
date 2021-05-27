@@ -8,12 +8,19 @@ BitDance is a fast, OpenMP optimized implementation of ((mention article name an
 
 This code depends on the Open3D library: https://github.com/intel-isl/Open3D
 
-## Authors
+## Usage
+
+TODO
+
+## Author
 
 Rafael Diniz (rafael@riseup.net)
 
-
 ## Acknowledgments
+
+- Mylene C.Q. Farias, my PhD advisor
+
+- Pedro Garcia Freitas, my PhD co-advisor
 
 - Open3D by Qian-Yi Zhou and Jaesik Park and Vladlen Koltun: http://open3d.org/
 
@@ -21,11 +28,7 @@ Rafael Diniz (rafael@riseup.net)
 
 - Financial support by the following Brazilian agencies: CAPES and FAP-DF
 
-- Mylene C.Q. Farias, my PhD advisor
-
-- Pedro Garcia Freitas, my PhD co-advisor
-
 ## License
 
 This code is licensed under GNU General Public License version 3 or any higher version, while the
-color paces conversion code is MIT licensed.
+color paces conversion and the Open3D code are MIT licensed.
