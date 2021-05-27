@@ -51,4 +51,4 @@ Rafael Diniz (rafael@riseup.net)
 ## License
 
 This code is licensed under GNU General Public License version 3 or any higher version, while the
-color paces conversion and the Open3D code are MIT licensed.
+color spaces conversion and the Open3D code are MIT licensed.
