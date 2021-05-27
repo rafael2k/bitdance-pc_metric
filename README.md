@@ -21,13 +21,13 @@ reference, as described in the article, use:
     optimize_voxel_size 3 k point_cloud.ply
 
 To run the CIEDE2000 color-based feature extractor with 8 bits label, neighborhood size of 12,
-voxel size (use the output of optimize_voxel_size) "E", with the results written to "results-c.csv",  use:
+voxel size (use the output of optimize_voxel_size) "E", with the statistics (histograms) results written to "results-c.csv",  use:
 
     bitdance_pcqa -i point_cloud.ply -n 12 -m 0,1,0,0,0 -v E -h results-c.csv
 
 To run the geometry-based feature extractor with label of 16-bit, neighborhood size of 6, without the
 use of voxelization (voxelization does not help for the geometry-based feature extractor), with
-results written to "results-g.csv", use:
+the statistics (histograms) results written to "results-g.csv", use:
 
     bitdance_pcqa -i pc_with_normals.ply -n 6 -m 0,0,1,0,0 -h results-g.csv
 
