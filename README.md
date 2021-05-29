@@ -16,8 +16,13 @@ distance calculation, which includes the Jensen-Shannon divergence code, among o
 
 This code depends on the Open3D library: https://github.com/intel-isl/Open3D
 
+The code was developed and tested in Debian Linux 11 (codename Bullseye). To install
+the Open3D development headers, run (as root):
+
+    apt-get install libopen3d-dev
+
 In order to compile the code, written in C++, open the Makefile, adjust it your preferred C++
-compiler, set to your Open3D installation prefix path, and run:
+compiler, set to your Open3D installation prefix path (no need for any modification on Debian 11), and run:
 
     make
 

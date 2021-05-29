@@ -19,8 +19,11 @@
 
 PREFIX=/usr
 
-# put here the prefix where Open3D is installed
-OPEN3D_PREFIX=/usr/local
+# Open3D install prefix path
+OPEN3D_PREFIX=$(PREFIX)
+
+# if installed manually, typically /usr/local is used
+##OPEN3D_PREFIX=/usr/local
 
 # Change to your C++ compiler of preference...
 CPP=g++
@@ -29,10 +32,9 @@ CFLAGS= -g -std=c11 -Wall
 
 CXXFLAGS= -g -std=c++17 -fPIC -fopenmp -Wall  -Wno-deprecated-declarations -Wno-unused-result -DUNIX -I$(OPEN3D_PREFIX)/include \
 	-I$(OPEN3D_PREFIX)/include/Open3D \
-	-I$(OPEN3D_PREFIX)/include/Open3D/3rdparty/Eigen \
-	-I$(OPEN3D_PREFIX)/include/Open3D/3rdparty/fmt/include \
-	-I/usr/include/libdrm -I. -I./ColorSpace
-LDFLAGS= -g -std=c++17 -fPIC -fopenmp -Wl,--no-as-needed -rdynamic -lOpen3D -lGLEW -lGLU -lGL -lglfw -lpng16 -lz
+	-I$(PREFIX)/include/eigen3 \
+	-I. -I./ColorSpace
+LDFLAGS= -g -std=c++17 -fPIC -fopenmp -Wl,--no-as-needed -rdynamic -lOpen3D -lGLEW -lGLU -lGL -lglfw # -lpng16 -lz
 
 ##
 
