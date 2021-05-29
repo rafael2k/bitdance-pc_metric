@@ -22,8 +22,7 @@ PREFIX=/usr
 # put here the prefix where Open3D is installed
 OPEN3D_PREFIX=/usr/local
 
-# Change to your compiler of preference
-CC=gcc
+# Change to your C++ compiler of preference...
 CPP=g++
 
 CFLAGS= -g -std=c11 -Wall

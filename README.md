@@ -2,11 +2,24 @@
 
 BitDance: Low Complexity Point Cloud Quality Assessment Metric
 
-BitDance is a fast, OpenMP optimized implementation of ((mention article name and reference when published))
+BitDance is a fast, OpenMP optimized implementation of ((mention SPL IEEE article name and reference when published))
+
+This repository contains the code for all discussed algorithms in the article. The C++ code produces
+three binaries: bitdance_pcqa, create_normals and optimize_voxel_size. The bitdance_pcqa calculates
+the color and geometry PC feature statistics; create_normals creates PCs with oriented normals; and
+optimize_voxel_size uses a parameterized heuristic and constant to provide a voxel size for a given
+PC.
+
 
 ## Compilation
 
 This code depends on the Open3D library: https://github.com/intel-isl/Open3D
+
+In order to compile the code, written in C++, open the Makefile, adjust it your preferred C++
+compiler, set to your Open3D installation prefix path, and run:
+
+    make
+
 
 ## Usage
 
