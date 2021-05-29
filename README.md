@@ -8,7 +8,8 @@ This repository contains the code for all discussed algorithms in the article. T
 three binaries: bitdance_pcqa, create_normals and optimize_voxel_size. The bitdance_pcqa calculates
 the color and geometry PC feature statistics; create_normals creates PCs with oriented normals; and
 optimize_voxel_size uses a parameterized heuristic and constant to provide a voxel size for a given
-PC.
+PC. In directory "distance_calculation", it is present the python script we developed for statistics
+distance calculation, which includes the Jensen-Shannon divergence code, among others.
 
 
 ## Compilation
@@ -45,9 +46,11 @@ the statistics (histograms) results written to "results-g.csv", use:
     bitdance_pcqa -i pc_with_normals.ply -n 6 -m 0,0,1,0,0 -h results-g.csv
 
 
-## Author
+## Authors
 
-Rafael Diniz (rafael@riseup.net)
+- Rafael Diniz (rafael@riseup.net)
+
+- Pedro Garcia Freitas (pdr.grc.frts@gmail.com)
 
 ## Acknowledgments
 
