@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     voxel_strategy = atoi(argv[1]);
     knob1 = atof(argv[2]);
 
-    fprintf(stderr, "knob1 = %f\n", knob1);
+    fprintf(stderr, "k = %f\n", knob1);
 
     std::shared_ptr<geometry::PointCloud> pc[pc_number];
 
