@@ -2,7 +2,11 @@
 
 BitDance: Low Complexity Point Cloud Quality Assessment Metric
 
-BitDance is a fast, OpenMP optimized implementation of ((mention SPL IEEE article name and reference when published))
+BitDance is a fast, OpenMP optimized implementation of: "Color and Geometry
+Texture Descriptors for Point-Cloud Quality Assessment" (DOI
+10.1109/LSP.2021.3088059), by Rafael Diniz, Pedro Garcia Freitas and Mylene
+C.Q. Farias to be published soon by IEEE Signal Processing Letters.
+
 
 This repository contains the code for all discussed algorithms in the article. The C++ code produces
 three binaries: bitdance_pcqa, create_normals and optimize_voxel_size. The bitdance_pcqa calculates
