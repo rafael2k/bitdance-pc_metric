@@ -91,14 +91,34 @@ int main(int argc, char *argv[])
 
 //    print_pointcloud(*pc, false);
 
+#if  !((OPEN3D_VERSION_MAJOR == 0 ) &&  (OPEN3D_VERSION_MINOR < 10))
+        io::WritePointCloudOption pc_params = io::WritePointCloudOption (true, false, false,  NULL);
+#endif
+
     if ( strstr(argv[2], ".ply" ))
-        io::WritePointCloudToPLY(argv[2], *pc, true, false);
+#if ((OPEN3D_VERSION_MAJOR == 0 ) &&  (OPEN3D_VERSION_MINOR < 10))
+        io::WritePointCloudToPLY(argv[2], *pc, true, false); //
+#else
+        io::WritePointCloudToPLY(argv[2], *pc, pc_params); //
+#endif
     if( strstr(argv[2], ".xyz"))
+#if ((OPEN3D_VERSION_MAJOR == 0 ) &&  (OPEN3D_VERSION_MINOR < 10))
         io::WritePointCloudToXYZ(argv[2], *pc, true, false);
+#else
+        io::WritePointCloudToXYZ(argv[2], *pc, pc_params);
+#endif
     if( strstr(argv[2], ".xyzrgb"))
+#if ((OPEN3D_VERSION_MAJOR == 0 ) &&  (OPEN3D_VERSION_MINOR < 10))
         io::WritePointCloudToXYZRGB(argv[2], *pc, true, false);
+#else
+        io::WritePointCloudToXYZRGB(argv[2], *pc, pc_params);
+#endif
     if( strstr(argv[2], ".pcd"))
+#if ((OPEN3D_VERSION_MAJOR == 0 ) &&  (OPEN3D_VERSION_MINOR < 10))
         io::WritePointCloudToPCD(argv[2], *pc, true, false);
+#else
+        io::WritePointCloudToPCD(argv[2], *pc, pc_params);
+#endif
 
     return EXIT_SUCCESS;
 
