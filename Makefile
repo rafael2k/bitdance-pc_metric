@@ -29,7 +29,7 @@ OPEN3D_PREFIX=$(PREFIX)
 CPP=g++
 
 CXXFLAGS= -g -std=c++17 -fPIC -fopenmp -Wall  -Wno-deprecated-declarations -Wno-unused-result -DUNIX -I$(OPEN3D_PREFIX)/include \
-	-I$(OPEN3D_PREFIX)/include/Open3D \
+	-I$(OPEN3D_PREFIX)/include/Open3D -I$(OPEN3D_PREFIX)/include/open3d \
 	-I$(PREFIX)/include/eigen3 \
 	-I. -I./ColorSpace
 LDFLAGS= -g -std=c++17 -fPIC -fopenmp -Wl,--no-as-needed -rdynamic -lOpen3D -lGLEW -lGLU -lGL -lglfw
