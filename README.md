@@ -72,7 +72,7 @@ the statistics (histograms) results written to "results-g.csv", use:
 
 - Rafael Diniz (rafael@riseup.net)
 
-- Pedro Garcia Freitas (pedro@sawp.com.br) with some metrics calculation python code
+- Pedro Garcia Freitas (pedro@sawp.com.br): python code for some distances calculation
 
 ## Acknowledgments
 
