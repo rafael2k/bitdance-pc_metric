@@ -36,6 +36,33 @@ distances = [
     d.cosine, d.euclidean, d.jensenshannon,  EMD, energy
 ]
 
+# Ian Porto's distances (Chamfer, Hausdorff, L1, L2) — implemented on
+# histogram feature vectors for direct comparison with the SLBP thesis.
+# Note: these compute distances between aligned 1D feature vectors. Ian's
+# thesis uses Chamfer/Hausdorff on 3D point sets (Section 4.2.7-4.2.8),
+# which is semantically different. L1 and L2 are aliases for cityblock and
+# euclidean, already above.
+
+def chamfer(u, v):
+    """Chamfer distance between two feature vectors.
+    For aligned 1D vectors of same length, this reduces to mean absolute
+    difference: Σ|u[i]-v[i]| / N."""
+    return np.mean(np.abs(u - v))
+
+def hausdorff(u, v):
+    """Hausdorff distance between two feature vectors.
+    For aligned 1D vectors, this is the maximum absolute element-wise
+    difference: max_i |u[i]-v[i]| (same as Chebyshev/L∞)."""
+    return np.max(np.abs(u - v))
+
+# L1 and L2 are already cityblock and euclidean above.
+# Ian also uses them directly on feature maps (Section 4.2.9-4.2.10).
+
+ian_distances = [
+    chamfer, hausdorff,
+]
+
+
 
 def run(args):
     df_baseline = pd.read_csv(args.score_file)
